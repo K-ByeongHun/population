@@ -1,0 +1,37 @@
+body{
+  background-color: #eafeff;
+  text-align: center;
+  width: 95%;
+  margin: auto;
+  color: rgb(76, 76, 76);
+}
+
+h1{
+  font-size: 4vw;
+}
+
+#본문{
+  font-size: 1.5vw;
+}
+
+#사진{
+  width: 90%;
+  margin: auto;
+}
+
+#라벨{
+  color: rgb(143, 63, 255);
+  font-size: 30px;
+}
+
+.form{
+  font-size: 95%;
+}
+
+#predictionForm{
+  width: 95vw;
+}
+
+#years{
+  height: 30px;
+}

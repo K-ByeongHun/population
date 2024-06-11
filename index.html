@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Population Prediction</title>
+    <link rel="icon", href="/favicon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="script.js"></script>       <!--스크립트 파일 임포트-->
+    <link rel="stylesheet" href="style.css">       <!--css 파일 임포트-->
+</head>
+<body>
+    <h1>Population Prediction</h1>
+    <p id="본문">
+      안녕하십니까? 본 모델은 우리나라 현재 출산율과 인구 성장률을 반영하여 만든 예측 프로그램입니다. 
+      <br>
+      현재 대한민국의 인구는 심각한 수준을 달리고 있으며 다음 자료는 인구 현황 csv파일입니다
+      <hr>
+      <img src="csv파일 사진.png" alt="csv파일 사진" id="사진">      <!-- 인구 데이터와 인구성장률을 포함한 csv파일 사진 -->
+      <br>
+      몇년 까지 예측해보시겠습니까?
+    </p>
+    <form id="predictionForm" onsubmit="predictPopulation(event)">
+      <div class="form">
+        <input placeholder="정수를 입력하세요" type="number" id="years" name="years" required>    <!--몇년까지 예측할 지 변수를 받음-->
+        <label for="years">:(정수)년 후의 인구변화</label>          
+        <button type="submit">Predict</button>              <!--그래프를 띄울 수 있는 버튼-->
+        <button type="button" onclick="location.reload()">Refresh</button>      <!--새로고침 버튼-->
+      </div>
+    </form>
+    <input type="checkbox" id="logScale" name="logScale" onclick="logscalecheckbox()">      <!--로그 스케일로 변환할 수 있는 체크박스-->
+    <label for="logScale">: Log Scale</label>
+    <br>
+    <label id="라벨">&lt;Bar Graph&gt;</label>
+    <div id="chartContainer">
+        <canvas id="populationChart"></canvas>
+    </div>        <!--막대그래프 띄우는 장치-->
+    <label id="라벨">&lt;Line Graph&gt;</label>
+    <div id="lineChartContainer">
+      <canvas id="linePopulationChart"></canvas>
+    </div>      <!--꺾은선그래프 띄우는 장치-->
+    <label><strong><h2>번외편, 인구성장률이 7%라면?</h2></strong></label>         <!---->
+</body>
+</html>
